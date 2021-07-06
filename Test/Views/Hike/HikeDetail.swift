@@ -21,14 +21,14 @@ struct HikeDetail: View {
     var body: some View {
         VStack {
             HikeGraph(hike: hike, path:dataToShow )
-                .frame(height:200)
+                .frame(height:170)
             HStack(spacing:25) {
                 ForEach(buttons, id:\.0){ value in
                     Button(action: {
                         self.dataToShow = value.1
                     }){
                         Text(value.0)
-                            .font(.system(size: 20))
+                            .font(.system(size: 15))
                             .foregroundColor(value.1 == self.dataToShow
                                 ? Color.gray
                                 : Color.accentColor)
@@ -37,7 +37,7 @@ struct HikeDetail: View {
                     }
                 }
             }
-            .padding(.top, 200 )
+            .padding(.top, 100 )
         }
     }
 }
